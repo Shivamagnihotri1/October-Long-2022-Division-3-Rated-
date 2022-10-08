@@ -1,0 +1,62 @@
+Problem
+Chef has the binary representation SS of a number XX with him. He can modify the number by applying the following operation exactly once:
+Make X := =X ⊕ [X/2^y], where ( 1 ≤ Y ≤ ∣S∣ ) and ⊕ denotes the bitwise XOR operation.
+Chef wants to maximize the value of XX after performing the operation. Help Chef in determining the value of YY which will maximize the
+value of X after the operation.
+
+Input Format
+The first line of input will contain a single integer T, denoting the number of test cases.
+Each test case consists of two lines of inputs - the first containing the length of binary string S.
+The second line of input contains the binary string S.
+
+Output Format
+For each test case, output on a new line, the value of Y which will maximize
+the value of X after the operation.
+
+Constraints
+  •	1 ≤ T ≤ 5.10^4
+  •	1 ≤ S ≤ 10^5
+  •	The sum of |S| over all test cases won't exceed 5.10^5.
+  •	S contains the characters 0 and 1 only.
+  
+Sample 1:
+Input               Output
+4                   1
+2                   2
+10                  1
+2                   2
+11
+3
+101
+3
+110
+
+Solution:
+language: C++17
+#include <iostream>
+using namespace std;
+
+void solve() {
+  int k , ans = 0;
+	cin>>k;
+	char str[k];
+	cin>>str;
+	for(int i = 0; str [i] != '\0'; i++){
+	    if(str[i] == '1'){
+	        ans++;
+	        
+	    }else{
+	        break;
+	        }
+	    }
+	cout<<ans<<endl;
+}
+
+signed main(){
+    int t; cin>>t; while(t--){
+        solve  ();
+    }
+}
+
+
+
